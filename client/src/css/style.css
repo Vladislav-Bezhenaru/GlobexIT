@@ -1,0 +1,164 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Proxima Nova";
+}
+
+body {
+  height: 100%;
+  position: relative;
+}
+
+.report {
+  width: 1120px;
+  min-height: 100vw;
+  margin: auto;
+  padding-top: 64px;
+}
+.report .searchBar__wrapper {
+  position: relative;
+  display: flex;
+  height: 48px;
+  width: 100%;
+}
+.report .searchBar__wrapper .searchBar {
+  width: 100%;
+  border-radius: 24px;
+  border: 1px solid #d4defe;
+  outline: none;
+  padding-left: 15px;
+  font-size: 1.5em;
+}
+.report .searchBar__wrapper .searchBar:hover {
+  border: 1px solid #abbeff;
+}
+.report .searchBar__wrapper .searchBar:focus {
+  border: 1px solid #abbeff;
+  transform: scale(1.01);
+}
+.report .searchBar__wrapper .searchBar:focus:focus + .searchBar__icon {
+  right: 12px;
+}
+.report .searchBar__wrapper .searchBar__icon {
+  position: absolute;
+  content: url("../assets/magnifier.png");
+  clear: both;
+  float: right;
+  width: 24px;
+  height: 24px;
+  top: 12px;
+  right: 20px;
+  cursor: pointer;
+}
+.report .usersWrapper {
+  display: grid;
+  margin-top: 24px;
+  grid-template-columns: repeat(3, 1fr);
+  -moz-column-gap: 25px;
+       column-gap: 25px;
+  row-gap: 25px;
+}
+.report .usersWrapper .userItem {
+  border-radius: 16px;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1019607843);
+  padding: 25px;
+  width: 357px;
+  height: 314px;
+  cursor: pointer;
+}
+.report .usersWrapper .userItem:hover {
+  transform: scale(1.02);
+}
+.report .usersWrapper .userItem .userName {
+  font-size: 1.5em;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #262c40;
+}
+.report .usersWrapper .userItem .userPhone, .report .usersWrapper .userItem .userEmail {
+  color: #8189a3;
+}
+.report .usersWrapper .userItem .userInfo .userPhone {
+  position: relative;
+  left: 4px;
+  display: flex;
+  align-items: center;
+}
+.report .usersWrapper .userItem .userInfo .userPhone__number {
+  margin-left: 20px;
+}
+.report .usersWrapper .userItem .userInfo .userEmail {
+  display: flex;
+  margin-top: 20px;
+}
+.report .usersWrapper .userItem .userInfo .userEmail__email {
+  margin-left: 20px;
+}
+.report .popupWrapper {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  width: 100vw;
+  min-height: 100%;
+  background: rgba(188, 195, 208, 0.5019607843);
+}
+.report .popupWrapper .popup {
+  position: fixed;
+  top: 15%;
+  max-width: 500px;
+  background-color: white;
+  min-height: 400px;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1019607843);
+}
+.report .popupWrapper .popup .popupTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.report .popupWrapper .popup .popupTitle__userName {
+  color: #262c40;
+  font-size: 1.5em;
+  font-weight: 700;
+}
+.report .popupWrapper .popup .popupTitle__close {
+  cursor: pointer;
+}
+.report .popupWrapper .popup .popupInfo {
+  display: flex;
+  margin: 40px 0;
+  font-size: 18px;
+}
+.report .popupWrapper .popup .popupInfo__title, .report .popupWrapper .popup .popupInfo__text {
+  display: flex;
+  flex-direction: column;
+}
+.report .popupWrapper .popup .popupInfo__title > div, .report .popupWrapper .popup .popupInfo__text > div {
+  margin-bottom: 14px;
+}
+.report .popupWrapper .popup .popupInfo__title > div:last-child, .report .popupWrapper .popup .popupInfo__text > div:last-child {
+  margin-bottom: 0;
+}
+.report .popupWrapper .popup .popupInfo__text {
+  color: #8189a3;
+}
+.report .popupWrapper .popup .popupAddInfo {
+  margin-bottom: 40px;
+}
+.report .popupWrapper .popup .popupAddInfo__title {
+  font-size: 18px;
+}
+.report .popupWrapper .popup .popupAddInfo__text {
+  margin-top: 18px;
+  color: #8189a3;
+}
+.report .active {
+  opacity: 1;
+  visibility: inherit;
+}

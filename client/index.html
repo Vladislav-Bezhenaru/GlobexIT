@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Report</title>
+  <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body>
+  <div class="report">
+    <div class="searchBar__wrapper">
+      <input class="searchBar"></input>
+      <div class="searchBar__icon"></div>
+    </div>
+    <div class="usersWrapper"></div>
+    <div class="popupWrapper">
+      <div class="popup">
+        <div class="popupTitle">
+          <div class="popupTitle__userName"></div>
+          <img src="src/assets/close.png" width="20" height="20" class="popupTitle__close"></img>
+        </div>
+        <div class="popupInfo">
+          <div class="popupInfo__title">
+            <div class="popupInfo__title__phone">Телефон:</div>
+            <div class="popupInfo__title__email">Почта:</div>
+            <div class="popupInfo__title__date">Дата приема:</div>
+            <div class="popupInfo__title__post">Должность:</div>
+            <div class="popupInfo__title__division">Подразделение:</div>
+          </div>
+          <div class="popupInfo__text">
+            <div class="popupInfo__text__phone"></div>
+            <div class="popupInfo__text__email"></div>
+            <div class="popupInfo__text__date"></div>
+            <div class="popupInfo__text__post"></div>
+            <div class="popupInfo__text__division"></div>
+          </div>
+        </div>
+        <div class="popupAddInfo">
+          <div class="popupAddInfo__title">Дополнительная информация:</div>
+          <div class="popupAddInfo__text"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="src/js/createUsers.js"></script>
+  <script src="src/js/getUsers.js"></script>
+  <script src="src/js/popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+@import './utils/colors';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Proxima Nova';
+}
+
+body {
+  height: 100%;
+  position: relative;
+}
+
+.report {
+  width: 1120px;
+  min-height: 100vw;
+  margin: auto;
+  padding-top: 64px;
+
+  .searchBar__wrapper {
+    position: relative;
+    display: flex;
+    height: 48px;
+    width: 100%;
+
+    .searchBar {
+      width: 100%;
+      border-radius: 24px;
+      border: 1px solid $searchBar-border;
+      outline: none;
+      padding-left: 15px;
+      font-size: 1.5em;
+
+      &:hover {
+        border: 1px solid $searchBar-border-hover;
+      }
+
+      &:focus {
+        border: 1px solid $searchBar-border-hover;
+        transform: scale(1.01);
+
+        &:focus + .searchBar__icon {
+          right: 12px;
+        }
+      }
+
+      &__icon {
+        position: absolute;
+        content: url('../assets/magnifier.png');
+        clear: both;
+        float: right;
+        width: 24px;
+        height: 24px;
+        top: 12px;
+        right: 20px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .usersWrapper {
+    display: grid;
+    margin-top: 24px;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 25px;
+    row-gap: 25px;
+
+    .userItem {
+      border-radius: 16px;
+      box-shadow: 0px 0px 20px 0px #0000001A;
+      padding: 25px;
+      width: 357px;
+      height: 314px;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.02);
+      }
+
+      .userName {
+        font-size: 1.5em;
+        font-weight: 700;
+        margin-bottom: 30px;
+        color: $userName;
+      }
+
+      .userPhone, .userEmail {
+        color: $userNumber;
+      }
+
+      .userInfo {
+
+        .userPhone {
+          position: relative;
+          left: 4px;
+          display: flex;
+          align-items: center;
+
+          &__number {
+            margin-left: 20px;
+          }
+        }
+
+        .userEmail {
+          display: flex;
+          margin-top: 20px;
+
+          &__email {
+            margin-left: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  .popupWrapper {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    width: 100vw;
+    min-height: 100%;
+    background: #BCC3D080;
+
+    .popup {
+      position: fixed;
+      top: 15%;
+      max-width: 500px;
+      background-color: white;
+      min-height: 400px;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0px 0px 20px 0px #0000001A;
+
+      .popupTitle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &__userName {
+          color: $userName;
+          font-size: 1.5em;
+          font-weight: 700;
+        }
+
+        &__close {
+          cursor: pointer;
+        }
+      }
+
+      .popupInfo {
+        display: flex;
+        margin: 40px 0;
+        font-size: 18px;
+        
+
+
+        &__title, &__text {
+          display: flex;
+          flex-direction: column;
+          
+          & > div {
+            margin-bottom: 14px;
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+
+        &__text {
+          color: $userNumber;
+        }
+      }
+
+      .popupAddInfo {
+        margin-bottom: 40px;
+
+        &__title {
+          font-size: 18px;
+        }
+
+        &__text {
+          margin-top: 18px;
+          color: $userNumber;
+        }
+      }
+    }
+  }
+
+  .active {
+    opacity: 1;
+    visibility: inherit;
+  }
+}
